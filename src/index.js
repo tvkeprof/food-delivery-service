@@ -8,7 +8,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  const { value } = req.body;
+  res.send(value);
 });
 
 app.post("/", (req, res) => {
@@ -16,6 +17,10 @@ app.post("/", (req, res) => {
   const { value } = req.body;
   console.log("Received value:", value);
   // Send the received value back as the response
+  res.send(value);
+});
+app.put("/", (req, res) => {
+  const { value } = req.body;
   res.send(value);
 });
 app.listen(port, () => {
