@@ -1,13 +1,12 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema({
-  foodName: { type: String, require: true },
-  price: { type: Number, require: true },
-  image: { type: String, require: true },
-  ingredients: { type: String, require: true },
+  foodName: { type: String },
+  price: { type: Number },
+  image: { type: String },
+  ingredients: { type: String },
   category: {
-    trype: mongoose.Types.ObjectId,
-    require: true,
+    type: mongoose.Types.ObjectId,
     default: "category",
   },
 });
