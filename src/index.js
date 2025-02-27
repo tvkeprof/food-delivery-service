@@ -30,21 +30,6 @@ app.use("/user", userRouter);
 app.use("/order", orderRouter);
 app.use("/food", foodRouter);
 
-app.get("/", (req, res) => {
-  const { value } = req.body;
-  res.send(value);
-});
-
-app.post("/", (req, res) => {
-  const { value } = req.body;
-  console.log("Received value:", value);
-  res.send(value);
-});
-app.put("/", (req, res) => {
-  const { value } = req.body;
-  res.send(value);
-});
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
