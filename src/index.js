@@ -6,6 +6,7 @@ import { orderRouter } from "./routes/order.routes.js";
 import { foodRouter } from "./routes/food.routes.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { logInRouter } from "./routes/logIn.routes.js";
 dotenv.config();
 
 const url = process.env.DATABASE_CONNECTION_URL;
@@ -29,6 +30,7 @@ app.use("/category", categoryRouter);
 app.use("/user", userRouter);
 app.use("/order", orderRouter);
 app.use("/food", foodRouter);
+app.use("/login", logInRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
