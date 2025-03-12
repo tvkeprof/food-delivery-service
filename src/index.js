@@ -18,13 +18,13 @@ const connectDb = async () => {
     console.log("error", err);
   }
 };
-connectDb();
 
 const app = express();
 const port = 9999;
 app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use(express.json());
+connectDb();
 
 app.use("/category", categoryRouter);
 app.use("/user", userRouter);

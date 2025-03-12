@@ -2,6 +2,7 @@ import { Users } from "../../models/users.model.js";
 import bcrypt from "bcryptjs";
 
 export const createUsers = async (req, res) => {
+  console.log("Received data:", req.body);
   const { email, password } = req.body;
 
   try {
