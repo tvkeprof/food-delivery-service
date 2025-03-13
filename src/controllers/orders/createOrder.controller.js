@@ -1,4 +1,3 @@
-// import { Users } from "../../models/users.model.js";
 import { Orders } from "../../models/foodOrder.model.js";
 export const createOrder = async (req, res) => {
   const data = req.body;
