@@ -15,5 +15,5 @@ categoryRouter.post(
   existingCategoryMiddleware,
   createCategory
 );
-categoryRouter.delete("", deleteCategories);
-categoryRouter.put("", updateCategories);
+categoryRouter.delete("/:id", deleteCategories);
+categoryRouter.put("/:id", updateCategories);

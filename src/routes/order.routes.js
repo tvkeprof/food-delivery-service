@@ -8,5 +8,5 @@ export const orderRouter = Router();
 
 orderRouter.get("", getOrders);
 orderRouter.post("", createOrder);
-orderRouter.delete("", deleteOrder);
-orderRouter.put("", updateOrders);
+orderRouter.delete("/:id", deleteOrder);
+orderRouter.put("/:id", updateOrders);

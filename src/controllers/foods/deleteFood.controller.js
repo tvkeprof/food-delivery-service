@@ -1,11 +1,11 @@
 import { Foods } from "../../models/food.models.js";
 
 export const deleteFoods = async (req, res) => {
-  const { _id } = req.body;
+  const { id } = req.params;
 
   try {
-    const food = await Foods.deleteOne({ id: _id });
-    res.send(food).status(200);
+    await Foods.findByIdAndDelete({ id });
+    res.send({ message: "succesfully deleted" }).status(200);
   } catch (err) {
     console.log("errr", err);
     res.send(err).status(400);

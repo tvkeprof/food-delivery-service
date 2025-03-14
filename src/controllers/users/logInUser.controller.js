@@ -16,7 +16,7 @@ export const logInUser = async (req, res) => {
     if (match) {
       return res.status(200).json({
         succes: true,
-        message: "successfully ",
+        data: findEmail,
       });
     } else {
       return res.status(400).json({

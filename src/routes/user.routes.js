@@ -1,14 +1,15 @@
 import { Router } from "express";
+import { signUpMiddleWare } from "../middlewares/signUpMiddleware.js";
 import { getUsers } from "../controllers/users/getUsers.controller.js";
-import { createUsers } from "../controllers/users/createUser.controller.js";
 import { deleteUser } from "../controllers/users/deleteUser.controller.js";
 import { updateUsers } from "../controllers/users/updateUser.controller.js";
-
-import { signUpMiddleWare } from "../middlewares/signUpMiddleware.js";
+import { createUsers } from "../controllers/users/createUser.controller.js";
+import { getUserById } from "../controllers/users/getUserById.controller.js";
 
 export const userRouter = Router();
 
 userRouter.get("", getUsers);
+userRouter.get("/:id", getUserById);
 userRouter.post("", signUpMiddleWare, createUsers);
-userRouter.delete("", deleteUser);
+userRouter.delete("/:id", deleteUser);
 userRouter.put("", updateUsers);

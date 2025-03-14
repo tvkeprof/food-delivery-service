@@ -1,9 +1,11 @@
 import { Foods } from "../../models/food.models.js";
 
 export const updateFoods = async (req, res) => {
-  const updateData = req.body;
+  const { id } = req.params;
+  const data = req.body;
   try {
-    const food = await Foods.updateOne(updateData);
+    const updatedDate = await Foods.findByIdAndUpdate(id, data);
+    res.send({ updatedDate }).status(200);
     console.log("updated foods");
   } catch (Err) {
     console.log("err", Err);
