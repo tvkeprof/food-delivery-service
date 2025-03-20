@@ -24,7 +24,7 @@ const connectDb = async () => {
 const app = express();
 const port = 9999;
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:4000"] }));
 
 app.use(express.json());
 connectDb();
