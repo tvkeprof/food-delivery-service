@@ -2,9 +2,14 @@ import { Foods } from "../../models/food.models.js";
 
 export const updateFoods = async (req, res) => {
   const { id } = req.params;
-  const data = req.body;
+  const { foodName, price, ingredients, image } = req.body;
   try {
-    const updatedDate = await Foods.findByIdAndUpdate(id, data);
+    const updatedDate = await Foods.findByIdAndUpdate(id, {
+      foodName,
+      price,
+      ingredients,
+      image,
+    });
     res.send({ updatedDate }).status(200);
     console.log("updated foods");
   } catch (Err) {

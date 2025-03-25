@@ -21,4 +21,3 @@ export const createFood = async (req, res) => {
     });
   }
 };
-// category n objectid r barij avhiig asuuh?
