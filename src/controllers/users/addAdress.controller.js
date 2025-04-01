@@ -1,14 +1,17 @@
 import { Users } from "../../models/users.model.js";
 
 const AddAdress = async (req, res) => {
-  const { value } = req.body;
+  const { address } = req.body;
+
+  console.log(req.body);
+
+  //   console.log("req.params", req.params);
 
   try {
-    const updatedUser = await Users.findByIdAndUpdate(
-      req.params.id,
-      { address: value },
-      { new: true }
-    );
+    const updatedUser = await Users.findByIdAndUpdate(req.params.id, {
+      address,
+    });
+    console.log(req.params.id);
     res
       .send({ updatedUser, message: "users added address successfuly" })
       .status(200);
