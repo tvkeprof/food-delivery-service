@@ -3,10 +3,6 @@ import { Users } from "../../models/users.model.js";
 const AddAdress = async (req, res) => {
   const { address } = req.body;
 
-  console.log(req.body);
-
-  //   console.log("req.params", req.params);
-
   try {
     const updatedUser = await Users.findByIdAndUpdate(req.params.id, {
       address,
