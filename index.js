@@ -24,7 +24,11 @@ const connectDb = async () => {
 const app = express();
 const port = 9999;
 
-app.use(cors({ origin: ["http://localhost:3000", "http://localhost:4000"] }));
+app.use(
+  cors({
+    origin: ["https://fooddeliveryy.vercel.app", "http://localhost:4000"],
+  })
+);
 
 app.use(express.json());
 connectDb();
@@ -38,6 +42,3 @@ app.use("/category", categoryRouter);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-// get user neg user id-gaar avdag ym nemj hiiy
-// delete id-gaa params avdag bolgoh buh table
