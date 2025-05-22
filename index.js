@@ -24,14 +24,7 @@ const connectDb = async () => {
 const app = express();
 const port = 9999;
 
-app.use(
-  cors({
-    origin: [
-      "https://fooddeliveryy.vercel.app",
-      "https://food-delivery-admin-web-one.vercel.app/",
-    ],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 connectDb();
