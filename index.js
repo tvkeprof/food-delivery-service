@@ -26,7 +26,10 @@ const port = 9999;
 
 app.use(
   cors({
-    origin: ["https://fooddeliveryy.vercel.app", "http://localhost:4000"],
+    origin: [
+      "https://fooddeliveryy.vercel.app",
+      "https://food-delivery-admin-web-one.vercel.app/",
+    ],
   })
 );
 
